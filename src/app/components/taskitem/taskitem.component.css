@@ -14,3 +14,9 @@
     align-items: center;
     justify-content: space-between;
 }
+.deleteicon{
+    color:rgb(104, 104, 104);
+}
+.deleteicon:hover{
+    color: red;
+}

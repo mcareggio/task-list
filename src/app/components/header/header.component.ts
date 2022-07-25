@@ -13,6 +13,6 @@ export class HeaderComponent implements OnInit {
     this.title="Lista de Tareas";
   }
   toggleButton(){
-    
+    alert("anda");
   }
 }

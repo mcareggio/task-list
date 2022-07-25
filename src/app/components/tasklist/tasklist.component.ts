@@ -15,8 +15,20 @@ export class TasklistComponent implements OnInit {
 
   ngOnInit(): void {
     //this.tasks=[{id:1,text:"sa",remember:false,date:"as"}];
+   this.getTasks();
+  }
+  togglebuttonDelete(task:Taskinterface){
+    this.deleteTask(task);
+  }
+  private getTasks(){
     this.taskService.getTasks().subscribe(task=>
       this.tasks=task);
   }
-
+  private deleteTask(task:Taskinterface){
+    this.taskService.deleteTask(task).subscribe(
+      ()=>{
+        this.getTasks();
+      }
+    );
+  }
 }

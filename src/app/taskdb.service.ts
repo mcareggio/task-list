@@ -15,4 +15,8 @@ export class TaskdbService {
   getTasks():Observable<Taskinterface[]>{
     return this.http.get<Taskinterface[]>(this.httpUrl);
   }
+  deleteTask(task:Taskinterface):Observable<Taskinterface>{
+    const url_del=this.httpUrl+"/"+task.id;
+    return this.http.delete<Taskinterface>(url_del);
+  }
 }

@@ -1,7 +1,7 @@
-<div [ngClass]="task.remember ? 'task reminder' : 'task'" onClick="btnClick()">
-    <h3>{{task.text}}</h3>
-    <p>{{task.date}}</p>
-    <fa-icon [faTimes]="faTimes">
-        
-    </fa-icon>
+<div [ngClass]="task.remember ? 'task reminder' : 'task'">
+    <h3>{{task.text}} 
+        <fa-icon class="deleteicon" [icon]="faTimes" (click)="btnClickDel(task)">
+        </fa-icon>
+    </h3>
+    <p>{{task.date}}</p>   
 </div>
