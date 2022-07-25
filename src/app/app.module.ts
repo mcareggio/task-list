@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TasklistComponent } from './components/tasklist/tasklist.component';
+import { TaskitemComponent } from './components/taskitem/taskitem.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { TasklistComponent } from './components/tasklist/tasklist.component';
     HeaderComponent,
     HomepageComponent,
     ButtonComponent,
-    TasklistComponent
+    TasklistComponent,
+    TaskitemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
