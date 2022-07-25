@@ -9,6 +9,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { TasklistComponent } from './components/tasklist/tasklist.component';
 import { TaskitemComponent } from './components/taskitem/taskitem.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
