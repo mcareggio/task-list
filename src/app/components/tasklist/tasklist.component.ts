@@ -20,6 +20,9 @@ export class TasklistComponent implements OnInit {
   togglebuttonDelete(task:Taskinterface){
     this.deleteTask(task);
   }
+  togglebuttonReminder(task:Taskinterface){
+    this.reminderTask(task);
+  }
   private getTasks(){
     this.taskService.getTasks().subscribe(task=>
       this.tasks=task);
@@ -30,5 +33,15 @@ export class TasklistComponent implements OnInit {
         this.getTasks();
       }
     );
+  }
+  private reminderTask(task:Taskinterface){
+    //alert(task.id);
+    task.remember ? task.remember=false : task.remember=true;
+    this.taskService.updateTask(task).subscribe(
+      ()=>{
+        console.log("Reminder TaskID"+task.id+" "+"activado");
+      }
+    );
+
   }
 }

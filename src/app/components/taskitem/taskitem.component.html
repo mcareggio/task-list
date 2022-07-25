@@ -1,4 +1,6 @@
-<div [ngClass]="task.remember ? 'task reminder' : 'task'">
+<div [ngClass]="task.remember ? 'task reminder' : 'task'"
+    (dblclick)="btnDoubleClickReminder(task)"
+>
     <h3>{{task.text}} 
         <fa-icon class="deleteicon" [icon]="faTimes" (click)="btnClickDel(task)">
         </fa-icon>

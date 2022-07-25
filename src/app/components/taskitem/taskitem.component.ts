@@ -12,6 +12,7 @@ import { Taskinterface } from 'src/app/models/taskinterface';
 export class TaskitemComponent implements OnInit {
   @Input()task:Taskinterface={id:1,text:"",remember:false,date:""};
   @Output()btnClickDelete:EventEmitter<Taskinterface>=new EventEmitter();
+  @Output()btnDoubleClickReminderO:EventEmitter<Taskinterface>=new EventEmitter();
   public faTimes=faTimes;
 
   constructor() { }
@@ -19,8 +20,9 @@ export class TaskitemComponent implements OnInit {
   ngOnInit(): void {
   }
   btnClickDel(task:Taskinterface){
-    
     this.btnClickDelete.emit(task);
   }
-  
+  btnDoubleClickReminder(task:Taskinterface){
+    this.btnDoubleClickReminderO.emit(task);
+  }
 }

@@ -1,3 +1,8 @@
 <div class="nn">   
-    <app-taskitem *ngFor="let task of tasks" [task]="task" (btnClickDelete)="togglebuttonDelete(task)" ></app-taskitem>
+    <app-taskitem
+     *ngFor="let task of tasks"
+     [task]="task" 
+     (btnClickDelete)="togglebuttonDelete(task)" 
+     (btnDoubleClickReminderO)="togglebuttonReminder(task)">
+    </app-taskitem>
 </div>
