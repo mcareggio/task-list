@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public title:string='';
+  public addTaskPanel:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
     this.title="Lista de Tareas";
   }
+
   toggleButton(){
-    alert("anda");
+    this.addTaskPanel=!this.addTaskPanel;
+  }
+  changeAddTaskPanelVisibility(){
+    this.toggleButton();
   }
 }

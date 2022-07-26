@@ -10,6 +10,8 @@ import { TasklistComponent } from './components/tasklist/tasklist.component';
 import { TaskitemComponent } from './components/taskitem/taskitem.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AddtaskComponent } from './components/addtask/addtask.component';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomepageComponent,
     ButtonComponent,
     TasklistComponent,
-    TaskitemComponent
+    TaskitemComponent,
+    AddtaskComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

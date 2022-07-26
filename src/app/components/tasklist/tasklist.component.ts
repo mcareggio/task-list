@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskdbService } from 'src/app/taskdb.service';
 import { Taskinterface } from 'src/app/models/taskinterface';
+import { TasklistservService } from 'src/app/tasklistserv.service';
 @Component({
   selector: 'app-tasklist',
   templateUrl: './tasklist.component.html',
@@ -9,13 +10,17 @@ import { Taskinterface } from 'src/app/models/taskinterface';
 export class TasklistComponent implements OnInit {
   public tasks:Taskinterface[];
  
-  constructor(private taskService:TaskdbService) { 
+  constructor(private taskService:TaskdbService,private tasklistservice:TasklistservService) { 
     this.tasks=[];
   }
 
   ngOnInit(): void {
-    //this.tasks=[{id:1,text:"sa",remember:false,date:"as"}];
    this.getTasks();
+   let  task={};
+   this.tasklistservice.addTaskListEmmiter.subscribe(task => {
+    this.tasks.push(task);
+  });//Actualiza la lista cuando se agrega una tarea
+
   }
   togglebuttonDelete(task:Taskinterface){
     this.deleteTask(task);
@@ -24,18 +29,20 @@ export class TasklistComponent implements OnInit {
     this.reminderTask(task);
   }
   private getTasks(){
-    this.taskService.getTasks().subscribe(task=>
-      this.tasks=task);
+    this.taskService.getTasks().subscribe(tasks=>
+      this.tasks=tasks);
   }
   private deleteTask(task:Taskinterface){
+    
     this.taskService.deleteTask(task).subscribe(
       ()=>{
-        this.getTasks();
+        
+        this.tasks=this.tasks.filter(t=>t.id!=task.id);
       }
     );
   }
   private reminderTask(task:Taskinterface){
-    //alert(task.id);
+    
     task.remember ? task.remember=false : task.remember=true;
     this.taskService.updateTask(task).subscribe(
       ()=>{

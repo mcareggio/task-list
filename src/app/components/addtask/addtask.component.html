@@ -1,0 +1,21 @@
+<form class="add-form" [formGroup]="formularioAddtask" (ngSubmit)="onEnviar($event)">
+    <div class="form-control">
+        <label  for="task">Task</label>
+        <input type="text" id="task" placeholder="add task text" formControlName="task"/>
+    </div>
+
+    <div class="form-control">
+        <label for="date">Date</label>
+        <input type="date" id="date" formControlName="date"/>
+       
+        <label for="date">Time</label>
+        <input type="time" id="time" formControlName="time"/>
+    </div>
+    <div class="form-control remember-check">
+    <label for="reminder">Remember</label>
+    <input type="checkbox"  id="reminder" formControlName="reminder"/>
+    </div>
+    <div class="form-control">
+    <input type="submit" class="btn btn-block" value="Send Task"/>
+    </div>
+</form>
