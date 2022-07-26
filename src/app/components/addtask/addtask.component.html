@@ -2,14 +2,22 @@
     <div class="form-control">
         <label  for="task">Task</label>
         <input type="text" id="task" placeholder="add task text" formControlName="task"/>
+        <div *ngIf="TextoTarea?.touched" class="error">
+            <p *ngIf="TextoTarea?.hasError('required')">Debe escribir la tarea</p>
+        </div>
     </div>
 
     <div class="form-control">
         <label for="date">Date</label>
         <input type="date" id="date" formControlName="date"/>
-       
+        <div *ngIf="FechaTarea?.touched" class="error">
+            <p *ngIf="FechaTarea?.hasError('required')">Debe elegir una fecha</p>
+        </div>
         <label for="date">Time</label>
         <input type="time" id="time" formControlName="time"/>
+        <div *ngIf="HoraTarea?.touched" class="error">
+            <p *ngIf="HoraTarea?.hasError('required')">Debe elegir una hora</p>
+        </div>
     </div>
     <div class="form-control remember-check">
     <label for="reminder">Remember</label>

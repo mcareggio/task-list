@@ -17,15 +17,21 @@ export class AddtaskComponent implements OnInit {
     this.formularioAddtask=this.formBuilder.group({
       task:['',Validators.required],
       date:['',Validators.required],
-      time:[],
+      time:['',Validators.required],
       reminder:[true,]
     })
   
   }
 
-  ngOnInit(): void {
-
-    
+  ngOnInit(): void {  }
+  get TextoTarea(){
+    return this.formularioAddtask.get("task");
+  }
+  get HoraTarea(){
+    return this.formularioAddtask.get("time");
+  }
+  get FechaTarea(){
+    return this.formularioAddtask.get("date");
   }
   private taskBuilderFromForm():Taskinterface{
     let task:Taskinterface={

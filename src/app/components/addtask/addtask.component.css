@@ -6,3 +6,7 @@
     display: flex;
     align-items: center;
 }
+.error{
+    color:red;
+    margin: 5px;
+}

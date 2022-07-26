@@ -36,16 +36,16 @@ export class TasklistComponent implements OnInit {
     
     this.taskService.deleteTask(task).subscribe(
       ()=>{
-        
         this.tasks=this.tasks.filter(t=>t.id!=task.id);
       }
     );
   }
   private reminderTask(task:Taskinterface){
-    
-    task.remember ? task.remember=false : task.remember=true;
-    this.taskService.updateTask(task).subscribe(
+    let updated_task:Taskinterface=task;
+    updated_task.remember=!task.remember;
+    this.taskService.updateTask(updated_task).subscribe(
       ()=>{
+        task=updated_task;
         console.log("Reminder TaskID"+task.id+" "+"activado");
       }
     );

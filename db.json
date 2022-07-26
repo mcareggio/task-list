@@ -2,15 +2,21 @@
   "tasks": [
     {
       "id": 1,
-      "text": "xxs",
-      "date": "2022-07-26 null",
+      "text": "Programar",
+      "date": "2022-07-26 18:00",
       "remember": true
     },
     {
       "id": 2,
-      "text": "asxsx",
-      "date": "2022-07-26 null",
+      "text": "Asistir Encuentro Argentina Programa",
+      "date": "2022-07-25 20:00",
       "remember": true
+    },
+    {
+      "id": 3,
+      "text": "Ser Feliz!",
+      "date": "2022-07-26 19:00",
+      "remember": false
     }
   ]
 }
